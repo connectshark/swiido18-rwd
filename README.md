@@ -1,4 +1,4 @@
-# vite-template
+# swiido18-rwd
 
 快速開發模板架構
 
