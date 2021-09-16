@@ -1,0 +1,1 @@
+import{c as n,o as s,b as e,d as r,F as t,e as a}from"./vendor.c58ad888.js";const o={setup:()=>({})},c={class:"banner"};o.render=function(e,r,t,a,o,u){return s(),n("div",c)};const u={components:{Banner:o},setup:()=>({})},d=a("h2",{class:"title"},"第一頁由此開始",-1);u.render=function(a,o,c,u,l,i){const p=e("Banner");return s(),n(t,null,[r(p),d],64)};export{u as default};
