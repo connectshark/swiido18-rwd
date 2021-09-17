@@ -86,6 +86,7 @@ export default {
       top: 100%;
       left: 0;
       width: 100%;
+      z-index: 2;
       background-color: #ffffff;
       .nav-item{
         display: block;
