@@ -1,6 +1,6 @@
 <template>
 <figure class="ad">
-  <img :src="url" alt="menu">
+  <img @dragstart.prevent :src="url" alt="menu">
 </figure>
 </template>
 

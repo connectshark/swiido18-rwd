@@ -12,7 +12,7 @@
     <a href="javascript:;" class="social-item" v-for="item in socials" :key="item">
       <i class='bx' :class="item" ></i>
     </a>
-    <a href="https://github.com/connectshark/swiido18-rwd-nav-bar" target="_blank" class="social-item">
+    <a href="https://github.com/connectshark/swiido18-rwd" target="_blank" class="social-item">
       <i class="bxl-github bx"></i>
     </a>
     <div class="menu" :class="{ 'menu-close': menu }" @click="menu = !menu">
@@ -45,11 +45,13 @@ export default {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffffaa;
+  background-color: #fff;
   padding: 15px 10px;
   box-sizing: border-box;
-  position: relative;
+  position: sticky;
+  top: 0;
   transition: padding .3s;
+  z-index: 2;
   @include mobile{
     padding: 10px 5px;
   }

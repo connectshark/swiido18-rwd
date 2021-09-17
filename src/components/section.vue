@@ -55,6 +55,13 @@ img{
     grid-template-columns: 2fr 3fr;
     width: 100%;
   }
+  &:hover{
+    .place{
+      img{
+        transform: scale(1.2);
+      }
+    }
+  }
   .content-group{
     box-sizing: border-box;
     position: relative;
@@ -101,6 +108,11 @@ img{
   }
   .place{
     order: -1;
+    overflow: hidden;
+    img{
+      transform: scale(1);
+      transition: transform .3s;
+    }
     @include mobile {
       order: 1;
     }

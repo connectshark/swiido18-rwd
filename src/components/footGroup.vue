@@ -1,15 +1,17 @@
 <template>
 <footer class="foot-group">
-  <div class="logo">
-    <figure class="logo-place">
-      <img src="https://fakeimg.pl/193x81/" alt="logo">
-    </figure>
-    <p class="contact">
-      <a href="mailto:bobhus394@gmail.com">Email:bobhus394@gmail.com</a>
-    </p>
-    <p class="contact">
-      <a href="https://nosegates.com">Copyright © 2021 nosegates All rights reserved.</a>
-    </p>
+  <div class="logo-group">
+    <div class="logo">
+      <figure class="logo-place">
+        <img src="https://fakeimg.pl/193x81/" alt="logo">
+      </figure>
+      <p class="contact">
+        <a href="mailto:bobhus394@gmail.com">Email:bobhus394@gmail.com</a>
+      </p>
+      <p class="contact">
+        <a href="https://nosegates.com">Copyright © 2021 nosegates All rights reserved.</a>
+      </p>
+    </div>
   </div>
   <div class="detail">
     <div class="store" v-for="item in stores" :key="item.name">
@@ -28,7 +30,7 @@
     <a href="javascript:;" class="social-item" v-for="item in socials" :key="item">
       <i class='bx' :class="item" ></i>
     </a>
-    <a href="https://github.com/connectshark/swiido18-rwd-nav-bar" target="_blank" class="social-item">
+    <a href="https://github.com/connectshark/swiido18-rwd" target="_blank" class="social-item">
       <i class="bxl-github bx"></i>
     </a>
   </div>
@@ -70,24 +72,36 @@ export default {
     grid-template-columns: 300px auto 100px;
     grid-template-rows: 1fr;
   }
-  .logo{
-    .logo-place{
-      width: 193px;
-      margin: auto;
-      img{
-        width: 100%;
-        vertical-align: middle;
-      }
+  .logo-group{
+    &::before{
+      content: '';
+      width: 0;
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
     }
-    .contact{
-      a{
-        font-size: 14px;
-        line-height: 2;
-        color: #0074BC;
-        text-decoration: none;
+    .logo{
+      display: inline-block;
+      vertical-align: middle;
+      .logo-place{
+        width: 193px;
+        margin: auto;
+        img{
+          width: 100%;
+          vertical-align: middle;
+        }
+      }
+      .contact{
+        a{
+          font-size: 14px;
+          line-height: 2;
+          color: #0074BC;
+          text-decoration: none;
+        }
       }
     }
   }
+  
   .detail{
     order: 2;
     @include mobile{
