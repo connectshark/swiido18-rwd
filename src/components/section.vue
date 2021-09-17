@@ -1,21 +1,35 @@
 <template>
-<section class="section reverse">
+<section class="section" :class="{ reverse: reverse }">
   <div class="content">
-    <h3>走糖，不走甜</h3>
-    <p class="text">「走糖」取自廣東話中的不加糖，想給你們不加糖但仍然有點甜的生活，以零負擔的甜點綴你的人生百味。</p>
-    <p class="holder">OUR STORY</p>
+    <h3>{{title}}</h3>
+    <p class="text">{{text}}</p>
+    <p class="holder">{{holder}}</p>
   </div>
   <figure class="place">
-    <img src="../assets/img/section-1-img.png" alt="img">
+    <img :src="imgUrl" alt="img">
   </figure>
 </section>
 </template>
 
 <script>
 export default {
-  setup () {
-    return {
-
+  props: {
+    title: {
+      type: String
+    },
+    text: {
+      type: String
+    },
+    holder: {
+      type: String
+    },
+    imgUrl: {
+      type: String
+    },
+    reverse: {
+      type: Boolean,
+      require: false,
+      default: false
     }
   }
 }
@@ -31,23 +45,26 @@ img{
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr;
+  width: 90%;
+  margin: 0 auto 20px;
   @include mobile {
     grid-template-rows: 1fr;
     grid-auto-flow: column;
     grid-template-columns: 2fr 3fr;
+    width: 100%;
   }
   .content{
     box-sizing: border-box;
     color: #fff;
     background-color: #5595BD;
-    padding:0 20px;
+    padding: 30px 20px;
     @include mobile{
       padding: 10px;
     }
     h3{
       font-size: 30px;
       line-height: 3;
-      font-weight: 600;
+      font-weight: 500;
     }
     .text{
       font-weight: 200;
@@ -61,7 +78,24 @@ img{
       opacity: .7;
     }
   }
+  .place{
+    order: -1;
+    @include mobile {
+      order: 1;
+    }
+  }
 }
 .reverse{
+  @include mobile {
+    grid-template-rows: 1fr;
+    grid-auto-flow: column;
+    grid-template-columns: 3fr 2fr;
+  }
+  .content{
+    background-color: #E6A079;
+  }
+  .place{
+    order: -1;
+  }
 }
 </style>
