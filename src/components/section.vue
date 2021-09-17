@@ -68,8 +68,10 @@ img{
     }
     .text{
       font-weight: 200;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 1.4;
+      width: 80%;
+      margin: auto;
     }
     .holder{
       font-size: 30px;

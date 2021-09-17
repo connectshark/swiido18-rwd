@@ -14,24 +14,43 @@
     :reverse="true"
   />
   <CardGroup/>
+  <Section
+    :title="'生活，注入一口甜'"
+    :text="'我們懂沒有甜味的日子是什麼模樣，因為種種原因我們戒糖，但沒有甜味的日子將會少了無數精彩，而恰到好處的甜，正是生活中最美好的點綴！'"
+    :holder="'OUR QUALITY'"
+    :imgUrl="s3"
+  />
+  <Ad :url="ad1"/>
+  <Ad :url="menu"/>
+  <FootGroup />
 </template>
 
 <script>
 import Section from '../components/section.vue'
 import Banner from '../components/banner.vue'
 import CardGroup from '../components/cardGroup.vue'
+import FootGroup from '../components/footGroup.vue'
+import Ad from '../components/ad.vue'
 import s1 from '../assets/img/section-1-img.png'
 import s2 from '../assets/img/section-2-img.png'
+import s3 from '../assets/img/section-3-img.png'
+import ad1 from '../assets/img/db.jpg'
+import menu from '../assets/img/menu.jpg'
 export default {
   components: {
     Banner,
     Section,
-    CardGroup
+    CardGroup,
+    Ad,
+    FootGroup
   },
   setup () {
     return {
       s1,
-      s2
+      s2,
+      s3,
+      ad1,
+      menu
     }
   }
 }

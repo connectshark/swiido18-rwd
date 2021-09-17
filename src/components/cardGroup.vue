@@ -74,7 +74,7 @@ img{
   row-gap: 10px;
   column-gap: 0;
   width: 60%;
-  margin: auto;
+  margin: 0 auto 20px;
   @include mobile {
     width: 95%;
     grid-template-columns: repeat(5, 1fr);
@@ -88,7 +88,7 @@ img{
       position: absolute;
       width: 100%;
       height: 100%;
-      transition: background .3s;
+      transition: background .5s;
       &::before{
         content: '';
         width: 0;
@@ -97,7 +97,7 @@ img{
         vertical-align: middle;
       }
       .center{
-        transition: transform .3s, opacity .3s;
+        transition: transform .5s, opacity .5s;
         display: inline-block;
         vertical-align: middle;
         color: #fff;
