@@ -1,12 +1,14 @@
 <template>
 <section class="section" :class="{ reverse: reverse }">
-  <div class="content">
-    <h3>{{title}}</h3>
-    <p class="text">{{text}}</p>
+  <div class="content-group">
+    <div class="content">
+      <h3>{{title}}</h3>
+      <p class="text">{{text}}</p>
+    </div>
     <p class="holder">{{holder}}</p>
   </div>
   <figure class="place">
-    <img :src="imgUrl" alt="img">
+    <img @dragstart.prevent :src="imgUrl" alt="img">
   </figure>
 </section>
 </template>
@@ -53,11 +55,23 @@ img{
     grid-template-columns: 2fr 3fr;
     width: 100%;
   }
-  .content{
+  .content-group{
     box-sizing: border-box;
+    position: relative;
     color: #fff;
     background-color: #5595BD;
     padding: 30px 20px;
+    &::before{
+      content: '';
+      width: 0;
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .content{
+      display: inline-block;
+      vertical-align: middle;
+    }
     @include mobile{
       padding: 10px;
     }
@@ -71,13 +85,18 @@ img{
       font-size: 16px;
       line-height: 1.4;
       width: 80%;
-      margin: auto;
+      margin: 0 auto 20px;
     }
     .holder{
-      font-size: 30px;
-      line-height: 2;
+      position: absolute;
+      font-size: 40px;
+      line-height: 30px;
       font-weight: bold;
       opacity: .7;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      letter-spacing: 1vw;
     }
   }
   .place{
@@ -93,7 +112,7 @@ img{
     grid-auto-flow: column;
     grid-template-columns: 3fr 2fr;
   }
-  .content{
+  .content-group{
     background-color: #E6A079;
   }
   .place{
